@@ -27,34 +27,33 @@ public class TeacherTest {
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
         StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studyMatePage = new StudymateTeacherPage();
+        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
-        studyMatePage.TeacherBtn.click();
-        studyMatePage.addTeacher.click();
+        studymateTeacherPage.TeacherBtn.click();
+        studymateTeacherPage.addTeacher.click();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String lastAndFirstName = firstName+" "+lastName;
-        studyMatePage.firstTeacherNameField.sendKeys(firstName);
-        studyMatePage.lastTeacherNameField.sendKeys(lastName);
-        studyMatePage.phoneTeacherNumberField.sendKeys("2301007780");
-        studyMatePage.emailTeacherField.sendKeys(faker.internet().emailAddress());
-        studyMatePage.specializationTeacherField.sendKeys(faker.job().position());
+        studymateTeacherPage.firstTeacherNameField.sendKeys(firstName);
+        studymateTeacherPage.lastTeacherNameField.sendKeys(lastName);
+        studymateTeacherPage.phoneTeacherNumberField.sendKeys("2301007780");
+        studymateTeacherPage.emailTeacherField.sendKeys(faker.internet().emailAddress());
+        studymateTeacherPage.specializationTeacherField.sendKeys(faker.job().position());
         ApplicationFlow.pause(500);
-        studyMatePage.choseCourseForTeacher.click();
+        studymateTeacherPage.choseCourseForTeacher.click();
         ApplicationFlow.pause(500);
-        studyMatePage.javaCoreCheckBox.click();
+        studymateTeacherPage.javaCoreCheckBox.click();
         ApplicationFlow.pause(500);
         actions.click().perform();
-        studyMatePage.addBtnForTeacher.click();
+        studymateTeacherPage.addBtnForTeacher.click();
         ApplicationFlow.pause(500);
-        if(studyMatePage.expectedName.equals(lastAndFirstName)){
-            Assert.assertEquals(studyMatePage.expectedName,lastAndFirstName);
+        if(studymateTeacherPage.expectedName.equals(lastAndFirstName)){
+            Assert.assertEquals(studymateTeacherPage.expectedName,lastAndFirstName);
         }else {
-            actions.moveToElement(studyMatePage.nextTeacherPageBtn).perform();
+            actions.moveToElement(studymateTeacherPage.nextTeacherPageBtn).perform();
             actions.click().perform();
         }
     }
 }
-
