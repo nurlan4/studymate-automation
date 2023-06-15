@@ -73,6 +73,7 @@ public class StudyMateLoginTest {
         Assert.assertTrue(emailRequired.isDisplayed());
     }
 
+
     @Test public void noEmailNoPassword(){
         Driver.getDriver().get(Config.getValue("studymateUrl"));
         WebElement passwordRequiredText = studymateLoginPage.passwordIsRequired;
