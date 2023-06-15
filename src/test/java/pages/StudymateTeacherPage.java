@@ -5,18 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilites.Driver;
 
-public class StudyMatePage {
-    public StudyMatePage(){
+public class StudymateTeacherPage {
+    public StudymateTeacherPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "(//input)[1]")
-    public WebElement emailField;
-
-    @FindBy (xpath = "(//input)[2]")
-    public WebElement passwordField;
-
-    @FindBy(xpath = "(//button)[3]")
-    public WebElement loginBtn;
 
     @FindBy(xpath = "(//li)[4]")
     public WebElement TeacherBtn;

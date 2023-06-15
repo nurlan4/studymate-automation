@@ -6,7 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.StudyMatePage;
+import pages.StudymateTeacherPage;
+import pages.StudymateLoginPage;
 import utilites.ApplicationFlow;
 import utilites.Config;
 import utilites.Driver;
@@ -25,10 +26,11 @@ public class TeacherTest {
     public void createTeacher(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudyMatePage studyMatePage = new StudyMatePage();
-        studyMatePage.emailField.sendKeys(Config.getValue("studymateUsername"));
-        studyMatePage.passwordField.sendKeys(Config.getValue("studymatePassword"));
-        studyMatePage.loginBtn.click();
+        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
+        StudymateTeacherPage studyMatePage = new StudymateTeacherPage();
+        studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
+        studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
+        studymateLoginPage.loginBtn.click();
         studyMatePage.TeacherBtn.click();
         studyMatePage.addTeacher.click();
         String firstName = faker.name().firstName();
