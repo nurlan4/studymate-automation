@@ -19,7 +19,6 @@ public class TeacherTest {
     }
     @AfterTest
     public void cleanUp(){
-        ApplicationFlow.pause(15000);
         Driver.quit();
     }
     @Test
