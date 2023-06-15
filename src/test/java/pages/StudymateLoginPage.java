@@ -19,4 +19,13 @@ public class StudymateLoginPage {
     public WebElement loginBtn;
     @FindBy(xpath = "//a")
     public List<WebElement> menuOptions;
+
+    @FindBy(xpath = "//p[.='Invalid password']")
+    public WebElement invalidPasswordPopUp;
+
+    @FindBy(xpath = "//p[.='Password is required!']")
+    public WebElement passwordIsRequired;
+
+    @FindBy(xpath = "//p[.='Email is required!']")
+    public WebElement emailIsRequired;
 }
