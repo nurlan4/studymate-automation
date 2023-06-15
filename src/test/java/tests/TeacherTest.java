@@ -15,7 +15,7 @@ public class TeacherTest {
 
     @BeforeTest
     public void driver(){
-        Driver.getDriver().get(Config.getValue("URL"));
+        Driver.getDriver().get(Config.getValue("studymateUrl"));
     }
     @AfterTest
     public void cleanUp(){
@@ -27,8 +27,8 @@ public class TeacherTest {
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
         StudyMatePage studyMatePage = new StudyMatePage();
-        studyMatePage.emailField.sendKeys(Config.getValue("studyMateEmail"));
-        studyMatePage.passwordField.sendKeys(Config.getValue("studyMatePassword"));
+        studyMatePage.emailField.sendKeys(Config.getValue("studymateUsername"));
+        studyMatePage.passwordField.sendKeys(Config.getValue("studymatePassword"));
         studyMatePage.loginBtn.click();
         studyMatePage.TeacherBtn.click();
         studyMatePage.addTeacher.click();
