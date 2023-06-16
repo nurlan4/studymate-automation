@@ -15,7 +15,7 @@ public class StudymateGroupPage {
     public WebElement groupNameInput;
     @FindBy(xpath = "//textarea[@type='text']")
     public WebElement descriptionInput;
-    @FindBy(xpath ="//input[@placeholder=\"MM/DD/YYYY\"]" )
+    @FindBy(xpath ="//input[@placeholder='MM/DD/YYYY']" )
     public WebElement dateInput;
     @FindBy(xpath = "//button[text()='Create']")
     public WebElement createBtn;
