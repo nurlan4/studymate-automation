@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilites.Config;
 import utilites.Driver;
 
 import java.util.List;
@@ -28,4 +29,12 @@ public class StudymateLoginPage {
 
     @FindBy(xpath = "//p[.='Email is required!']")
     public WebElement emailIsRequired;
+
+    public void studyMateLogIn(){
+        usernameInput.sendKeys(Config.getValue("studymateUsername"));
+        passwordInput.sendKeys(Config.getValue("studymatePassword"));
+        loginBtn.click();
+    }
+
+
 }
