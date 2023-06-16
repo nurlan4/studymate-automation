@@ -13,10 +13,12 @@ import utilites.Driver;
 public class StudyMateLoginTest {
     StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
     Faker faker = new Faker();
+
     @AfterTest
     public void quit(){
-        Driver.getDriver().quit();
+        Driver.quit();
     }
+
 
     @Test
     public void validCredentials(){
@@ -74,7 +76,8 @@ public class StudyMateLoginTest {
     }
 
 
-    @Test public void noEmailNoPassword(){
+    @Test
+    public void noEmailNoPassword(){
         Driver.getDriver().get(Config.getValue("studymateUrl"));
         WebElement passwordRequiredText = studymateLoginPage.passwordIsRequired;
         WebElement emailRequiredText = studymateLoginPage.emailIsRequired;
@@ -82,6 +85,16 @@ public class StudyMateLoginTest {
         ApplicationFlow.pause(1000);
         Assert.assertTrue(passwordRequiredText.isDisplayed());
         Assert.assertTrue(emailRequiredText.isDisplayed());
+    }
+
+    @Test
+    public void incorrectEmail(){
+        Driver.getDriver().get(Config.getValue("studymateUrl"));
+        studymateLoginPage.usernameInput.sendKeys(faker.lordOfTheRings().character());
+        studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
+        studymateLoginPage.loginBtn.click();
+        WebElement invalidEmailText = studymateLoginPage.invalidEmail;
+        Assert.assertTrue(invalidEmailText.isDisplayed());
     }
 
 

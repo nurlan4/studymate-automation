@@ -36,5 +36,8 @@ public class StudymateLoginPage {
         loginBtn.click();
     }
 
+    @FindBy(xpath = "//p[.='Email is not valid!']")
+     public WebElement invalidEmail;
+
 
 }
