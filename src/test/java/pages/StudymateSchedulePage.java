@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilites.Driver;
 
+import java.util.Random;
+
 public class StudymateSchedulePage {
     public StudymateSchedulePage() {
         PageFactory.initElements(Driver.getDriver(),this);
@@ -35,8 +37,10 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "//div[@class='MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-qiwgdb']")
     public WebElement chooseGroupInput;
 
-    public void chooseColor(int i){
-            Driver.getDriver().findElement(By.xpath("//div[@class='sc-jTjUTQ eckBjR']/div["+i+"]"));
+    public void chooseColor(){
+        Random random = new Random();
+        int randomcolor = random.nextInt(6);
+            Driver.getDriver().findElement(By.xpath("//div[@class='sc-jTjUTQ eckBjR']/div["+randomcolor+"]"));
     }
 
     @FindBy(xpath = "//li[.='Quickbeam1686883935634']")
