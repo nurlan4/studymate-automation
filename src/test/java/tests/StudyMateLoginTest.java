@@ -95,6 +95,9 @@ public class StudyMateLoginTest {
         studymateLoginPage.loginBtn.click();
         WebElement invalidEmailText = studymateLoginPage.invalidEmail;
         Assert.assertTrue(invalidEmailText.isDisplayed());
+
+
+
     }
 
 

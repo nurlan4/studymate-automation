@@ -11,5 +11,7 @@ public class SampleTest {
     public void test1(){
         Driver.getDriver().get(Config.getValue("studymateUrl"));
         studymateLoginPage.studyMateLogIn();
+
+
     }
 }
