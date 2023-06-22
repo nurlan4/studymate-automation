@@ -12,9 +12,14 @@ import utilites.Driver;
 
 public class TeacherTest {
 
+    StudymateLoginPage studymateLoginPage ;
+    StudymateTeacherPage studymateTeacherPage;
+
     @BeforeMethod
     public void driver(){
         Driver.getDriver().get(Config.getValue("studymateUrl"));
+         studymateLoginPage = new StudymateLoginPage();
+         studymateTeacherPage = new StudymateTeacherPage();
     }
     @AfterMethod
     public void cleanUp(){
@@ -24,8 +29,6 @@ public class TeacherTest {
     public void createTeacherHappy(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -58,8 +61,6 @@ public class TeacherTest {
     public void createTeacherSadFirstName(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -83,8 +84,6 @@ public class TeacherTest {
     public void createTeacherSadLastName(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -108,8 +107,6 @@ public class TeacherTest {
     public void createTeacherSadPhoneNum(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -134,8 +131,6 @@ public class TeacherTest {
     public void createTeacherSadEmail(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -160,8 +155,6 @@ public class TeacherTest {
     public void createTeacherSadSpecialization(){
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -185,8 +178,6 @@ public class TeacherTest {
     @Test
     public void createTeacherSadCourse(){
         Faker faker = new Faker();
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateTeacherPage studymateTeacherPage = new StudymateTeacherPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();

@@ -13,9 +13,16 @@ import utilites.ApplicationFlow;
 import utilites.Config;
 import utilites.Driver;
 public class AnnouncementTest {
+
+    StudymateLoginPage studymateLoginPage;
+    StudymateAnnouncementsPage studymateAnnouncementsPage ;
     @BeforeMethod
     public void driver() {
         Driver.getDriver().get(Config.getValue("studymateUrl"));
+
+         studymateLoginPage = new StudymateLoginPage();
+         studymateAnnouncementsPage = new StudymateAnnouncementsPage();
+
     }
     @AfterMethod
     public void cleanUp() {
@@ -25,8 +32,6 @@ public class AnnouncementTest {
     public void createAndCheckHappy() {
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
-        StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
-        StudymateAnnouncementsPage studymateAnnouncementsPage = new StudymateAnnouncementsPage();
         studymateLoginPage.usernameInput.sendKeys(Config.getValue("studymateUsername"));
         studymateLoginPage.passwordInput.sendKeys(Config.getValue("studymatePassword"));
         studymateLoginPage.loginBtn.click();
@@ -36,7 +41,7 @@ public class AnnouncementTest {
         ApplicationFlow.pause(500);
         studymateAnnouncementsPage.textForAnnouncement.click();
         studymateAnnouncementsPage.textForAnnouncement.sendKeys(text);
-        actions.moveToElement(studymateAnnouncementsPage.groupInput).click().perform();
+        actions.moveToElement(studymateAnnouncementsPage.groupInput1).click().perform();
         ApplicationFlow.pause(500);
         studymateAnnouncementsPage.chooseGroup.click();
         ApplicationFlow.pause(500);

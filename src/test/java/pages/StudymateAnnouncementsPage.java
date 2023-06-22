@@ -9,7 +9,7 @@ import javax.xml.xpath.XPath;
 
 public class StudymateAnnouncementsPage {
     public StudymateAnnouncementsPage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(xpath = "//h2/../button")
     public WebElement addAnnouncementBtn;
@@ -29,7 +29,7 @@ public class StudymateAnnouncementsPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveBtn;
-    }
+
     @FindBy(xpath = "(//a)[6]")
     public WebElement announcementPage;
 
@@ -40,7 +40,7 @@ public class StudymateAnnouncementsPage {
     public WebElement textForAnnouncement;
 
     @FindBy(xpath = "//input[@name='groups']")
-    public WebElement groupInput;
+    public WebElement groupInput1;
 
     @FindBy(xpath = "//li[.='Batch1687036529983']")
     public WebElement chooseGroup;
