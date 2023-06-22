@@ -72,6 +72,9 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
     public  List<WebElement> colorList1;
 
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public List<WebElement> listOfColors;
+
     @FindBy(xpath = "//button[.='Publish']")
     public WebElement publishBtn;
 
@@ -93,6 +96,27 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "//div[.='Canceled']/button")
     public WebElement buttonCancel;
 
+    @FindBy(xpath = "//*[@id='fc-dom-28']") //Giza
+    public WebElement selectDate;
+    @FindBy(xpath = "//*[@aria-label='Edit']") //Giza
+    public WebElement editBtn;
+
+    @FindBy(xpath = "//*/td[@data-date='2023-06-10']") //Giza
+    public WebElement chooseDate;
+    @FindBy(xpath = "//*[@id=':r19:']")//Giza
+    public WebElement editDate;
+    @FindBy(xpath = "//input[@id='title']")//Giza
+    public WebElement name;
+
+    @FindBy(xpath = "//input[@id='startTime']")//giza
+    public WebElement startTime;
+
+    @FindBy(xpath = "//button[.='Publish']")//giza
+    public WebElement publish;
+
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public  WebElement inputDateGiza;
 
 
 }
