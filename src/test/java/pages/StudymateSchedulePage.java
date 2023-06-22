@@ -1,61 +1,128 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilites.Driver;
 
-import java.util.Random;
+import java.util.List;
 
 public class StudymateSchedulePage {
     public StudymateSchedulePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//p[.='name']")
-    public WebElement nameOfEvent;
+    @FindBy(xpath = "//li[.='Schedule']")
+    public WebElement scheduleBtnSideMenu;
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    public WebElement createEventBtn;
 
-    @FindBy(xpath = "//button[.='Create event']")
-    public WebElement btnForCreateEventOrSchedule;
+    @FindBy(xpath = "//div[.='Schedule']")
+    public WebElement scheduleBtn;
 
-    @FindBy(xpath = "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1nvf7g0']/button")
-    public WebElement btnForChooseDayInCalendary;
+    @FindBy(xpath = "(//div/input)[4]")
+    public WebElement dateInput;
 
-    @FindBy(xpath = "//button[.='1']")
-    public WebElement firstDayInJune;
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public WebElement dateInput1;
 
-    @FindBy(xpath = "(//input)[5]")
-    public WebElement timeFromInput;
 
-    @FindBy(xpath = "(//input)[6]")
-    public WebElement timeToInput;
+    @FindBy(name = "startTime")
+    public WebElement fromTimeInput;
 
-    @FindBy(xpath = "(//input)[7]")
-    public WebElement nameOfEventInput;
+    @FindBy(name = "endTime")
+    public WebElement tillTimeInput;
 
-    @FindBy(xpath = "//div[@class='MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-qiwgdb']")
-    public WebElement chooseGroupInput;
+    @FindBy(name = "title")
+    public WebElement nameInput;
 
-    public void chooseColor(){
-        Random random = new Random();
-        int randomcolor = random.nextInt(6);
-            Driver.getDriver().findElement(By.xpath("//div[@class='sc-jTjUTQ eckBjR']/div["+randomcolor+"]"));
-    }
+    @FindBy(id = "mui-component-select-groupIds")
+    public WebElement dropdownChooseGroup;
 
-    @FindBy(xpath = "//li[.='Quickbeam1686883935634']")
-    public WebElement group;
+    @FindBy(xpath = "(//ul/li)[1]")
+    public WebElement firstOptionDropDown;
+
+    @FindBy(xpath = "(//button[@type='button']/..)[4]/button")
+    public List<WebElement> listOfDays;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[1]")
+    public WebElement repeatDayMonday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[2]")
+    public WebElement repeatDayTuesday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[3]")
+    public WebElement repeatDayWednesday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[4]")
+    public WebElement repeatDayThursday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[5]")
+    public WebElement repeatDayFriday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[6]")
+    public WebElement repeatDaySaturday;
+
+    @FindBy(xpath = "//div[2]/div[3]/div/div[2]/form/div[4]/div/button[7]")
+    public WebElement repeatDaySunday;
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[2]")
+    public WebElement endDateInput;
+
+    @FindBy(xpath = "(//div/form/div)[6]/div")//(//div/form/div[6])
+    public List<WebElement> colorList;
+
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public  List<WebElement> colorList1;
+
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public List<WebElement> listOfColors;
 
     @FindBy(xpath = "//button[.='Publish']")
     public WebElement publishBtn;
 
-    @FindBy(xpath = "//tr/td//div/a[@class='fc-daygrid-more-link fc-more-link']")
-    public WebElement eventList;
+    @FindBy(xpath = "//div/p[.='Daily meeting']/../..")
+    public WebElement getScheduleBtn;
 
-    @FindBy(xpath = "fc-daygrid-event fc-daygrid-dot-event fc-event fc-event-start fc-event-end fc-event-past")
-    public WebElement eventExample;
 
-    //div[@class='sc-jmpzUR NEUJ']/div[@class='sc-gUJyNl tUCAs']
+    @FindBy(xpath = "//*[@aria-label='Cancel']")
+    public WebElement cancelBtn;
+
+
+    @FindBy(xpath = "//*[@type='text']")
+    public WebElement describeInput;
+
+
+    @FindBy(xpath = "//button[@type='submit'] ")
+    public WebElement submitBtn;
+
+    @FindBy(xpath = "(//div)[.='Event successfully saved'][7]")
+    public WebElement eventCreationMessage;
+
+    @FindBy(xpath = "//div[.='Canceled']/button")
+    public WebElement buttonCancel;
+
+    @FindBy(xpath = "//*[@id='fc-dom-28']") //Giza
+    public WebElement selectDate;
+    @FindBy(xpath = "//*[@aria-label='Edit']") //Giza
+    public WebElement editBtn;
+
+    @FindBy(xpath = "//*/td[@data-date='2023-06-10']") //Giza
+    public WebElement chooseDate;
+    @FindBy(xpath = "//*[@id=':r19:']")//Giza
+    public WebElement editDate;
+    @FindBy(xpath = "//input[@id='title']")//Giza
+    public WebElement name;
+
+    @FindBy(xpath = "//input[@id='startTime']")//giza
+    public WebElement startTime;
+
+    @FindBy(xpath = "//button[.='Publish']")//giza
+    public WebElement publish;
+
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public  WebElement inputDateGiza;
 
 
 }
