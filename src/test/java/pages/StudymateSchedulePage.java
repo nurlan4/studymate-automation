@@ -9,7 +9,7 @@ import java.util.List;
 
 public class StudymateSchedulePage {
     public StudymateSchedulePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//li[.='Schedule']")
@@ -22,6 +22,10 @@ public class StudymateSchedulePage {
 
     @FindBy(xpath = "(//div/input)[4]")
     public WebElement dateInput;
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public WebElement dateInput1;
+
 
     @FindBy(name = "startTime")
     public WebElement fromTimeInput;
@@ -68,6 +72,12 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "(//div/form/div)[6]/div")//(//div/form/div[6])
     public List<WebElement> colorList;
 
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public  List<WebElement> colorList1;
+
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public List<WebElement> listOfColors;
+
     @FindBy(xpath = "//button[.='Publish']")
     public WebElement publishBtn;
 
@@ -89,6 +99,30 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "(//div)[.='Event successfully saved'][7]")
     public WebElement eventCreationMessage;
 
+    @FindBy(xpath = "//div[.='Canceled']/button")
+    public WebElement buttonCancel;
+
+    @FindBy(xpath = "//*[@id='fc-dom-28']") //Giza
+    public WebElement selectDate;
+    @FindBy(xpath = "//*[@aria-label='Edit']") //Giza
+    public WebElement editBtn;
+
+    @FindBy(xpath = "//*/td[@data-date='2023-06-10']") //Giza
+    public WebElement chooseDate;
+    @FindBy(xpath = "//*[@id=':r19:']")//Giza
+    public WebElement editDate;
+    @FindBy(xpath = "//input[@id='title']")//Giza
+    public WebElement name;
+
+    @FindBy(xpath = "//input[@id='startTime']")//giza
+    public WebElement startTime;
+
+    @FindBy(xpath = "//button[.='Publish']")//giza
+    public WebElement publish;
+
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public  WebElement inputDateGiza;
 
 
 }
