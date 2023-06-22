@@ -18,7 +18,7 @@ public class StudymateAnnouncementsPage {
     @FindBy(xpath = "//button[.='Add an announcement']")
     public WebElement addAnAnnouncement;
 
-    @FindBy(xpath = "//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-multiline css-1gv5z4s']")
+    @FindBy(xpath = "//*[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiInputBase-inputSizeSmall css-x7mp9n']")
     public WebElement textForAnnouncement;
 
     @FindBy(xpath = "//input[@name='groups']")
@@ -30,6 +30,12 @@ public class StudymateAnnouncementsPage {
     @FindBy(xpath = "//button[.='Add']")
     public WebElement add;
 
+    @FindBy(xpath = "//div[@class='css-q8s1he']/div/p[2]")
+    public WebElement textAboutAnnouncement;
+
+    @FindBy(xpath = "//*[@class='MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-previousNext css-1xr9krm']")
+    public WebElement nextPage;
+
     @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw'])[1]")
     public WebElement fromCalendaryBtn;
 
@@ -39,13 +45,16 @@ public class StudymateAnnouncementsPage {
     @FindBy(xpath = "(//button[.='1'])[2]")
     public WebElement firstDayInCalendary;
 
+    @FindBy(xpath = "(//button[.='30'])")
+    public WebElement lastDayInCalendary;
+
     @FindBy(xpath = "//*[@class='sc-cxdZMj djJwiF']")
     public WebElement dateFrom;
 
     @FindBy(xpath = "(//div[@class='css-1oq9wm5']//input)[1]")
     public WebElement goToFirstPage;
 
-    @FindBy(xpath = "(//*[@class='sc-cxdZMj djJwiF'])[1]")
+    @FindBy(xpath = "//div[@class='css-q8s1he']/div[3]/p")
     public WebElement announcementByDate;
 
     @FindBy (xpath = "(//*[@class='sc-ZqGJI egOVJP'])")

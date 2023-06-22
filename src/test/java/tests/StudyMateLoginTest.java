@@ -14,10 +14,8 @@ public class StudyMateLoginTest {
     StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
     Faker faker = new Faker();
 
-    @AfterTest
-    public void quit(){
-        Driver.quit();
-    }
+    //@AfterTest
+    //public void quit(){Driver.quit();}
 
 
     @Test
