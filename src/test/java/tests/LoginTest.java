@@ -10,7 +10,7 @@ import utilites.ApplicationFlow;
 import utilites.Config;
 import utilites.Driver;
 
-public class StudyMateLoginTest {
+public class LoginTest {
     StudymateLoginPage studymateLoginPage = new StudymateLoginPage();
     Faker faker = new Faker();
 
@@ -95,6 +95,9 @@ public class StudyMateLoginTest {
         studymateLoginPage.loginBtn.click();
         WebElement invalidEmailText = studymateLoginPage.invalidEmail;
         Assert.assertTrue(invalidEmailText.isDisplayed());
+
+
+
     }
 
 

@@ -39,5 +39,12 @@ public class StudymateLoginPage {
     @FindBy(xpath = "//p[.='Email is not valid!']")
      public WebElement invalidEmail;
 
+    //@FindBy(xpath = "//tbody/tr/td[3]/div/*[1]")
+   // public WebElement trashRecoveryBtn;
+
+   // @FindBy(xpath = "//p[.='Data successfully recovered']")
+   // public WebElement actualMessagel;
+
+
 
 }
