@@ -15,7 +15,7 @@ public class StudyMateScheduleTestGiza {
 
         @AfterTest
         public void quit(){
-          //  Driver.quit();
+            Driver.quit();
         }
 
         @Test
