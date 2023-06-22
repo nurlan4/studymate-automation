@@ -14,11 +14,15 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "(//button[@type='button'])[3]")
     public WebElement createEventBtn;
 
-    @FindBy(xpath = "//div[.='Schedule']")  //    //a[.='Schedule'] Giza
+    @FindBy(xpath = "//div[.='Schedule']")
     public WebElement scheduleBtn;
 
     @FindBy(xpath = "((//input[@placeholder='MM/DD/YYYY'])[1]")
     public WebElement dateInput;
+
+    @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
+    public WebElement dateInput1;
+
 
     @FindBy(name = "startTime")
     public WebElement fromTimeInput;
@@ -66,6 +70,9 @@ public class StudymateSchedulePage {
     public List<WebElement> colorList;
 
     @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
+    public  List<WebElement> colorList1;
+
+    @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
     public List<WebElement> listOfColors;
 
     @FindBy(xpath = "//button[.='Publish']")
@@ -85,6 +92,9 @@ public class StudymateSchedulePage {
 
     @FindBy(xpath = "//button[@type='submit'] ")
     public WebElement submitBtn;
+
+    @FindBy(xpath = "//div[.='Canceled']/button")
+    public WebElement buttonCancel;
 
     @FindBy(xpath = "//*[@id='fc-dom-28']") //Giza
     public WebElement selectDate;
@@ -109,9 +119,4 @@ public class StudymateSchedulePage {
     public  WebElement inputDateGiza;
 
 
-    }
-
-
-
-
-
+}
