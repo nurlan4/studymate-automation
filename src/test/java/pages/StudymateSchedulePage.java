@@ -11,13 +11,16 @@ public class StudymateSchedulePage {
     public StudymateSchedulePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    @FindBy(xpath = "//li[.='Schedule']")
+    public WebElement scheduleBtnSideMenu;
     @FindBy(xpath = "(//button[@type='button'])[3]")
     public WebElement createEventBtn;
 
     @FindBy(xpath = "//div[.='Schedule']")
     public WebElement scheduleBtn;
 
-    @FindBy(xpath = "((//input[@placeholder='MM/DD/YYYY'])[1]")
+    @FindBy(xpath = "(//div/input)[4]")
     public WebElement dateInput;
 
     @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[1]")
@@ -66,7 +69,7 @@ public class StudymateSchedulePage {
     @FindBy(xpath = "(//input[@placeholder='MM/DD/YYYY'])[2]")
     public WebElement endDateInput;
 
-    @FindBy(xpath = "//*[@id='schedule-form']/div[6]")
+    @FindBy(xpath = "(//div/form/div)[6]/div")//(//div/form/div[6])
     public List<WebElement> colorList;
 
     @FindBy(xpath = "//*[@id='schedule-form']/div[6]/div")
@@ -92,6 +95,9 @@ public class StudymateSchedulePage {
 
     @FindBy(xpath = "//button[@type='submit'] ")
     public WebElement submitBtn;
+
+    @FindBy(xpath = "(//div)[.='Event successfully saved'][7]")
+    public WebElement eventCreationMessage;
 
     @FindBy(xpath = "//div[.='Canceled']/button")
     public WebElement buttonCancel;
